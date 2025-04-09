@@ -5,101 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - [Nom de l'Artiste] - Photographe</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* ================================================= */
-        /* STYLES DE BASE POUR LA STRUCTURE (À METTRE DANS style.css) */
-        /* ================================================= */
-        body {
-            margin: 0; /* Enlève les marges par défaut */
-            font-family: sans-serif; /* Police basique, à changer */
-            /* L'ambiance N&B / Bordeaux sera définie ici */
-        }
-
-        /* Style de base pour les sections pleine page */
-        .full-screen-section {
-            min-height: 100vh; /* Hauteur minimale = 100% de la hauteur de la fenêtre */
-            display: flex; /* Pour centrer le contenu facilement */
-            justify-content: center;
-            align-items: center;
-            position: relative; /* Important pour le positionnement du texte */
-            overflow: hidden; /* Cache le contenu qui dépasse si nécessaire */
-            background-size: cover; /* L'image de fond couvre toute la section */
-            background-position: center center; /* Centre l'image de fond */
-        }
-
-        /* Section 1: Logo */
-        #logo-section {
-            background-color: #000000; /* Fond noir */
-        }
-        .logo-container img {
-            max-width: 80%; /* Limite la taille du logo */
-            max-height: 50vh; /* Limite la hauteur */
-            width: auto; /* Garde les proportions */
-            height: auto;
-            /* Ajouter le chemin vers le logo ici via CSS ou directement en HTML */
-        }
-         /* Alternative si le logo est juste du texte */
-         /*
-         .logo-container h1 {
-            font-size: 4rem;
-            color: #FFFFFF; / ou Bordeaux
-            margin: 0;
-         }
-         */
-
-        /* Sections avec Photo en Fond */
-        .photo-section h2 {
-            font-size: clamp(2.5rem, 10vw, 6rem); /* Taille de police responsive */
-            color: #FFFFFF; /* Texte blanc (à ajuster selon l'image) */
-            /* Appliquer ici la police spéciale si besoin */
-            text-transform: uppercase; /* Texte en majuscules */
-            text-align: center;
-            margin: 0;
-            padding: 0 20px; /* Empêche le texte de toucher les bords */
-            /* Ombre portée pour la lisibilité sur différentes images */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            /* Positionnement plus précis si nécessaire avec position: absolute */
-        }
-
-        /* Liens qui englobent les sections */
-        .section-link {
-            display: block; /* Pour que le lien prenne toute la place */
-            min-height: 100vh; /* Doit correspondre à la section */
-            text-decoration: none; /* Pas de soulignement */
-            color: inherit; /* Hérite la couleur du texte définie dans la section */
-            position: relative; /* Contexte de positionnement */
-            transition: transform 0.3s ease; /* Effet optionnel au survol */
-        }
-         /* Optionnel: Effet au survol
-         .section-link:hover {
-            transform: scale(1.02);
-         }
-         */
-
-        /* ----- Images de fond spécifiques (Utilise tes URLs) ----- */
-        /* Remplace les noms de fichiers par les tiens */
-        #portrait-section {
-            background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_personne_exemple.jpg');
-        }
-        #event-section {
-            background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_event_exemple.jpg');
-        }
-        #pro-section {
-            background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_immo_exemple.jpg');
-        }
-
-        /* Masquer temporairement header/footer si besoin pour ce design */
-        /* .site-header, .site-footer { display: none; } */
-
-    </style>
-</head>
+    </head>
 <body>
 
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
                  <a href="index.html">[Nom de l'Artiste]</a>
-            </div>
+                 </div>
             <nav class="main-navigation">
                 <ul>
                     <li><a href="index.html" class="active">Accueil</a></li>
