@@ -3,15 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - NITERC - Photographe</title>
+    <title>Accueil - [Nom de l'Artiste] - Photographe</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+    <style>
+        /* ================================================= */
+        /* STYLES DE BASE POUR LA STRUCTURE (À METTRE DANS style.css) */
+        /* ================================================= */
+        body {
+            margin: 0; /* Enlève les marges par défaut */
+            font-family: sans-serif; /* Police basique, à changer */
+            /* L'ambiance N&B / Bordeaux sera définie ici */
+        }
+
+        /* Style de base pour les sections pleine page */
+        .full-screen-section {
+            min-height: 100vh; /* Hauteur minimale = 100% de la hauteur de la fenêtre */
+            display: flex; /* Pour centrer le contenu facilement */
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Important pour le positionnement du texte */
+            overflow: hidden; /* Cache le contenu qui dépasse si nécessaire */
+            background-size: cover; /* L'image de fond couvre toute la section */
+            background-position: center center; /* Centre l'image de fond */
+        }
+
+        /* Section 1: Logo */
+        #logo-section {
+            background-color: #000000; /* Fond noir */
+        }
+        .logo-container img {
+            max-width: 80%; /* Limite la taille du logo */
+            max-height: 50vh; /* Limite la hauteur */
+            width: auto; /* Garde les proportions */
+            height: auto;
+            /* Ajouter le chemin vers le logo ici via CSS ou directement en HTML */
+        }
+         /* Alternative si le logo est juste du texte */
+         /*
+         .logo-container h1 {
+            font-size: 4rem;
+            color: #FFFFFF; / ou Bordeaux
+            margin: 0;
+         }
+         */
+
+        /* Sections avec Photo en Fond */
+        .photo-section h2 {
+            font-size: clamp(2.5rem, 10vw, 6rem); /* Taille de police responsive */
+            color: #FFFFFF; /* Texte blanc (à ajuster selon l'image) */
+            /* Appliquer ici la police spéciale si besoin */
+            text-transform: uppercase; /* Texte en majuscules */
+            text-align: center;
+            margin: 0;
+            padding: 0 20px; /* Empêche le texte de toucher les bords */
+            /* Ombre portée pour la lisibilité sur différentes images */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            /* Positionnement plus précis si nécessaire avec position: absolute */
+        }
+
+        /* Liens qui englobent les sections */
+        .section-link {
+            display: block; /* Pour que le lien prenne toute la place */
+            min-height: 100vh; /* Doit correspondre à la section */
+            text-decoration: none; /* Pas de soulignement */
+            color: inherit; /* Hérite la couleur du texte définie dans la section */
+            position: relative; /* Contexte de positionnement */
+            transition: transform 0.3s ease; /* Effet optionnel au survol */
+        }
+         /* Optionnel: Effet au survol
+         .section-link:hover {
+            transform: scale(1.02);
+         }
+         */
+
+        /* ----- Images de fond spécifiques (Utilise tes URLs) ----- */
+        /* Remplace les noms de fichiers par les tiens */
+        #portrait-section {
+            background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_personne_exemple.jpg');
+        }
+        #event-section {
+            background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_event_exemple.jpg');
+        }
+        #pro-section {
+            background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_immo_exemple.jpg');
+        }
+
+        /* Masquer temporairement header/footer si besoin pour ce design */
+        /* .site-header, .site-footer { display: none; } */
+
+    </style>
+</head>
 <body>
 
     <header class="site-header">
         <div class="container header-container">
             <div class="logo">
-                <a href="index.html">NITERC</a>
+                 <a href="index.html">[Nom de l'Artiste]</a>
             </div>
             <nav class="main-navigation">
                 <ul>
@@ -22,113 +109,58 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+             <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <h1>Photographe [Type : ex: Portrait & Immobilier]</h1>
-                <p class="tagline">[Petite phrase d'accroche qui définit le style ou la mission]</p>
-                <a href="portfolio.html" class="btn btn-primary">Découvrir mon travail</a>
-            </div>
+        <section id="logo-section" class="full-screen-section">
+            <div class="logo-container">
+                <img src="chemin/vers/votre/logo.png" alt="Logo [Nom de l'Artiste]">
+                </div>
         </section>
 
-        <section class="portfolio-preview section-padding">
-            <div class="container">
-                <h2>Portfolio Récent</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <a href="portfolio.html#immobilier">
-                            <img src="https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/immo.jpg"
-                                 alt="Exemple de photographie immobilière par [Nom de l'Artiste]">
-                            </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="portfolio.html#particuliers">
-                             <img src="https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/personne.jpg"
-                                  alt="Exemple de portrait par [Nom de l'Artiste]">
-                             </a>
-                    </div>
-                    <div class="gallery-item">
-                         <a href="portfolio.html#evenements"> <img src="https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/event.jpg"
-                                  alt="Exemple de photographie d'événement par [Nom de l'Artiste]">
-                             </a>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a href="portfolio.html" class="btn btn-secondary">Voir tout le portfolio</a>
-                </div>
-            </div>
-        </section>
-        <section class="services-overview section-padding alternate-bg">
-             <div class="container">
-                <h2>Mes Prestations</h2>
-                <div class="services-list">
-                    <div class="service-item">
-                        <h3>Photographie Immobilière</h3>
-                        <p>Valorisation de biens pour vente ou location...</p>
-                        <a href="services.html#immobilier">En savoir plus</a>
-                    </div>
-                    <div class="service-item">
-                        <h3>Portraits (Particuliers)</h3>
-                        <p>Séances personnalisées en studio ou extérieur...</p>
-                        <a href="services.html#portraits">En savoir plus</a>
-                    </div>
-                     <div class="service-item">
-                        <h3>Reportages Événementiels</h3>
-                        <p>Capturez les moments importants de vos événements...</p>
-                        <a href="services.html#evenements">En savoir plus</a>
-                    </div>
-                </div>
-                 <div class="text-center">
-                     <a href="services.html" class="btn btn-secondary">Voir toutes les prestations</a>
-                 </div>
-            </div>
-        </section>
+        <a href="portfolio.html#portraits" class="section-link" aria-label="Voir le portfolio Portraits">
+            <section id="portrait-section" class="full-screen-section photo-section">
+                <h2>PORTRAIT</h2>
+            </section>
+        </a>
 
-        <section class="about-preview section-padding">
-            <div class="container about-flex">
-                <div class="about-text">
-                    <h2>Qui suis-je ?</h2>
-                    <p>[Court paragraphe présentant l'artiste, sa passion, son approche. Mettre en avant l'ambiance N&B/Bordeaux si pertinent ici]...</p>
-                    <a href="a-propos.html" class="btn btn-secondary">Lire la suite</a>
-                </div>
-            </div>
-        </section>
+        <a href="portfolio.html#evenements" class="section-link" aria-label="Voir le portfolio Événements">
+            <section id="event-section" class="full-screen-section photo-section">
+                <h2>EVENEMENT</h2>
+            </section>
+        </a>
 
-         <section class="cta section-padding accent-bg">
-            <div class="container text-center">
-                <h2>Un projet en tête ?</h2>
-                <p>Discutons ensemble de vos besoins et de la manière dont je peux vous aider à les réaliser.</p>
-                <a href="contact.html" class="btn btn-primary">Contactez-moi</a>
-            </div>
-        </section>
+        <a href="portfolio.html#professionnel" class="section-link" aria-label="Voir le portfolio Professionnel">
+             <section id="pro-section" class="full-screen-section photo-section">
+                <h2>PROFESSIONNEL</h2>
+             </section>
+         </a>
 
-    </main>
+        </main>
 
     <footer class="site-footer section-padding">
-        <div class="container footer-container">
-            <div class="footer-links">
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="services.html">Prestations</a></li>
-                    <li><a href="a-propos.html">À Propos</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    </ul>
-            </div>
-            <div class="footer-social">
-                <p>Suivez-moi :</p>
-                <a href="[Lien vers le compte Instagram]" target="_blank" rel="noopener noreferrer">Instagram</a>
-            </div>
-            <div class="footer-copyright">
-                 <p>&copy; <span id="current-year"></span> [Nom de l'Artiste]. Tous droits réservés.</p>
-                 <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-            </div>
-        </div>
-    </footer>
+         <div class="container footer-container">
+             <div class="footer-links">
+                 <ul>
+                     <li><a href="index.html">Accueil</a></li>
+                     <li><a href="portfolio.html">Portfolio</a></li>
+                     <li><a href="services.html">Prestations</a></li>
+                     <li><a href="a-propos.html">À Propos</a></li>
+                     <li><a href="contact.html">Contact</a></li>
+                 </ul>
+             </div>
+             <div class="footer-social">
+                 <p>Suivez-moi :</p>
+                 <a href="[Lien vers le compte Instagram]" target="_blank" rel="noopener noreferrer">Instagram</a>
+             </div>
+             <div class="footer-copyright">
+                  <p>&copy; <span id="current-year"></span> [Nom de l'Artiste]. Tous droits réservés.</p>
+                  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+             </div>
+         </div>
+     </footer>
 
     </body>
 </html>
