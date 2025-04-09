@@ -1,1 +1,208 @@
-oui
+/* ================================================= */
+/* STYLES DE BASE POUR LA STRUCTURE                */
+/* (À compléter et affiner)                        */
+/* ================================================= */
+body {
+    margin: 0; /* Enlève les marges par défaut */
+    font-family: sans-serif; /* Police basique, à changer */
+    /* Définir ici les couleurs N&B / Bordeaux, police principale, etc. */
+    /* Exemple: */
+    /* background-color: #FFFFFF; /* Fond blanc par défaut ? */
+    /* color: #1a1a1a; /* Texte sombre par défaut ? */
+}
+
+/* Utilitaires (si besoin) */
+.container {
+    width: 90%;
+    max-width: 1100px; /* Largeur max du contenu centré */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Header & Footer Styling (Basique, à adapter au design final) */
+.site-header {
+    /* Exemple: le rendre fixe en haut */
+    /* position: fixed; */
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 100%; */
+    /* background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent ? */
+    /* z-index: 100; */
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-navigation li {
+    margin-left: 20px;
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: #333; /* A adapter */
+    /* Appliquer la couleur Bordeaux ici ? */
+}
+.main-navigation a.active {
+    font-weight: bold; /* Style pour la page active */
+}
+
+.menu-toggle {
+    display: none; /* Masqué par défaut, à afficher sur mobile */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.site-footer {
+    background-color: #f8f8f8; /* Fond léger pour le footer ? Ou noir ? */
+    color: #555; /* Couleur de texte pour le footer */
+    font-size: 0.9rem;
+}
+.footer-container {
+    /* Styles pour organiser le contenu du footer (flexbox ?) */
+}
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espace entre les liens */
+}
+.footer-links a {
+     text-decoration: none;
+     color: inherit;
+}
+.footer-social {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.footer-social a {
+     text-decoration: none;
+     color: inherit; /* Utiliser la couleur Bordeaux ? */
+     margin-left: 10px;
+     font-weight: bold;
+}
+.footer-copyright {
+    text-align: center;
+}
+
+
+/* Style de base pour les sections pleine page */
+.full-screen-section {
+    min-height: 100vh; /* Hauteur minimale = 100% de la hauteur de la fenêtre */
+    display: flex; /* Pour centrer le contenu facilement */
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Important pour le positionnement du texte */
+    overflow: hidden; /* Cache le contenu qui dépasse si nécessaire */
+    background-size: cover; /* L'image de fond couvre toute la section */
+    background-position: center center; /* Centre l'image de fond */
+}
+
+/* Section 1: Logo */
+#logo-section {
+    background-color: #000000; /* Fond noir */
+}
+.logo-container img {
+    display: block; /* Assure que l'image n'a pas d'espace en dessous */
+    max-width: 80%; /* Limite la taille du logo */
+    max-height: 50vh; /* Limite la hauteur */
+    width: auto; /* Garde les proportions */
+    height: auto;
+}
+ /* Alternative si le logo est juste du texte */
+ /*
+ .logo-container h1 {
+    font-size: 4rem;
+    color: #FFFFFF; / ou Bordeaux
+    margin: 0;
+ }
+ */
+
+/* Sections avec Photo en Fond */
+.photo-section h2 {
+    font-size: clamp(2.5rem, 10vw, 6rem); /* Taille de police responsive */
+    color: #FFFFFF; /* Texte blanc (à ajuster selon l'image et la palette) */
+    /* Appliquer ici la police spéciale si besoin */
+    /* font-family: 'Votre Police Speciale', sans-serif; */
+    text-transform: uppercase; /* Texte en majuscules */
+    text-align: center;
+    margin: 0;
+    padding: 0 20px; /* Empêche le texte de toucher les bords */
+    /* Ombre portée pour la lisibilité sur différentes images */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    /* Positionnement plus précis si nécessaire avec position: absolute */
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /* width: 100%; */ /* Nécessaire avec position absolute pour le text-align */
+}
+
+/* Liens qui englobent les sections */
+.section-link {
+    display: block; /* Pour que le lien prenne toute la place */
+    min-height: 100vh; /* Doit correspondre à la section */
+    text-decoration: none; /* Pas de soulignement */
+    color: inherit; /* Hérite la couleur du texte définie dans la section */
+    position: relative; /* Contexte de positionnement */
+    transition: transform 0.3s ease; /* Effet optionnel au survol */
+}
+ /* Optionnel: Effet au survol */
+ /*
+ .section-link:hover {
+    transform: scale(1.02); /* Léger zoom
+ }
+ */
+
+/* ----- Images de fond spécifiques (Utilise tes URLs) ----- */
+/* Remplace les noms de fichiers par les tiens */
+#portrait-section {
+    /* S'assurer que l'URL est correcte et que l'image est accessible */
+    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_personne_exemple.jpg');
+}
+#event-section {
+    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_event_exemple.jpg');
+}
+#pro-section {
+    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_immo_exemple.jpg');
+}
+
+
+/* ----- Responsive Design (Exemple de base pour le menu mobile) ----- */
+@media (max-width: 768px) {
+    .main-navigation {
+        display: none; /* Masquer le menu normal sur petit écran */
+        /* Ajouter ici les styles pour afficher le menu quand il est ouvert */
+        /* position: absolute; top: 60px; left: 0; width: 100%; background: #fff; etc. */
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton burger */
+    }
+
+    /* Ajuster la taille du texte sur mobile */
+    .photo-section h2 {
+         font-size: clamp(2rem, 12vw, 4rem);
+    }
+
+    /* Autres ajustements possibles pour mobile */
+}
