@@ -7,8 +7,8 @@ body {
     font-family: sans-serif; /* Police basique, à changer */
     /* Définir ici les couleurs N&B / Bordeaux, police principale, etc. */
     /* Exemple: */
-    /* background-color: #FFFFFF; /* Fond blanc par défaut ? */
-    /* color: #1a1a1a; /* Texte sombre par défaut ? */
+    background-color: #FFFFFF; /* Fond blanc par défaut ? */
+    color: #1a1a1a; /* Texte sombre par défaut ? */
 }
 
 /* Utilitaires (si besoin) */
@@ -177,13 +177,13 @@ body {
 /* Remplace les noms de fichiers par les tiens */
 #portrait-section {
     /* S'assurer que l'URL est correcte et que l'image est accessible */
-    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_personne_exemple.jpg');
+    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/personne.jpg');
 }
 #event-section {
-    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_event_exemple.jpg');
+    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/event.jpg');
 }
 #pro-section {
-    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/photo_immo_exemple.jpg');
+    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/immo.jpg');
 }
 
 
