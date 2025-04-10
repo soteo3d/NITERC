@@ -1,46 +1,82 @@
 /* ================================================= */
-/* STYLES DE BASE POUR LA STRUCTURE                */
-/* (À compléter et affiner)                        */
+/* IMPORTER LES POLICES GOOGLE FONTS               */
 /* ================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&display=swap');
+
+/* ================================================= */
+/* VARIABLES DE COULEURS ET STYLES DE BASE         */
+/* ================================================= */
+:root {
+    --color-black: #141414;
+    --color-gray: #B0ACAD;
+    --color-bordeaux: #330C0D;
+    --color-white: #FFFFFF; /* On ajoute du blanc pour le contraste */
+
+    /* Police principale pour le corps et la navigation */
+    --font-body: 'Raleway', sans-serif;
+    /* Police pour les titres importants */
+    --font-headings: 'Playfair Display', serif;
+}
+
 body {
-    margin: 0; /* Enlève les marges par défaut */
-    font-family: sans-serif; /* Police basique, à changer */
-    /* Définir ici les couleurs N&B / Bordeaux, police principale, etc. */
-    /* Exemple: */
-    background-color: #F5F5F5; /* Fond blanc par défaut ? */
-    color: #1a1a1a; /* Texte sombre par défaut ? */
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--color-black); /* Fond noir principal */
+    color: var(--color-gray); /* Texte gris par défaut */
+    line-height: 1.6; /* Améliore la lisibilité */
 }
 
-/* Utilitaires (si besoin) */
-.container {
-    width: 90%;
-    max-width: 1100px; /* Largeur max du contenu centré */
-    margin-left: auto;
-    margin-right: auto;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    color: var(--color-white); /* Titres en blanc pour contraster sur fond noir */
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
 }
 
-.section-padding {
-    padding-top: 60px;
-    padding-bottom: 60px;
+a {
+    color: var(--color-bordeaux); /* Couleur des liens par défaut (peut être surchargée) */
+    text-decoration: none; /* On enlève le soulignement par défaut */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transition douce pour le survol */
 }
 
-/* Header & Footer Styling (Basique, à adapter au design final) */
+a:hover {
+    color: var(--color-white); /* Au survol, le lien devient blanc ? ou un bordeaux plus vif ? */
+}
+
+
+/* ================================================= */
+/* STYLES HEADER & NAVIGATION                      */
+/* ================================================= */
 .site-header {
-    /* Exemple: le rendre fixe en haut */
-    /* position: fixed; */
-    /* top: 0; */
-    /* left: 0; */
-    /* width: 100%; */
-    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent ? */
-    /* z-index: 100; */
-    padding: 10px 0;
+    padding: 15px 0;
+    /* Positionnement fixe ou absolu si besoin */
+    position: absolute; /* Pour se superposer à la première section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Pour être au-dessus des sections */
+    background-color: transparent; /* Fond transparent par défaut */
 }
 
 .header-container {
+    width: 90%;
+    max-width: 1200px; /* Un peu plus large peut-être */
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.logo a {
+    font-family: var(--font-headings); /* Utiliser la police titre pour le logo texte ? */
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-white); /* Logo en blanc */
+    text-decoration: none;
+}
+/* Si logo image: */
+/* .logo img { max-height: 40px; width: auto; } */
 
 .main-navigation ul {
     list-style: none;
@@ -50,33 +86,133 @@ body {
 }
 
 .main-navigation li {
-    margin-left: 20px;
+    margin-left: 30px; /* Un peu plus d'espace */
 }
 
+/* --- Style "Vieille Pellicule Orange/Bordeaux" pour les liens de nav --- */
 .main-navigation a {
-    text-decoration: none;
-    color: #333; /* A adapter */
-    /* Appliquer la couleur Bordeaux ici ? */
+    font-family: var(--font-body); /* Utilise la police de corps */
+    font-weight: 700; /* Mettre en gras ? */
+    text-transform: uppercase; /* Majuscules pour un style plus marqué */
+    font-size: 0.9rem;
+    letter-spacing: 0.05em; /* Léger espacement des lettres */
+    color: var(--color-gray); /* Couleur de base: le gris clair */
+
+    /* Effet "pellicule" subtil avec text-shadow en couleur Bordeaux */
+    /* Ajuster l'opacité (le dernier chiffre) et le flou (le px) */
+    text-shadow: 0 0 6px rgba(51, 12, 13, 0.7); /* Ombre basée sur #330C0D */
+
+    padding-bottom: 5px; /* Espace pour un éventuel soulignement au survol */
+    border-bottom: 2px solid transparent; /* Préparer pour le soulignement */
+    transition: color 0.3s ease, text-shadow 0.3s ease, border-color 0.3s ease;
 }
+
+.main-navigation a:hover {
+    color: var(--color-white); /* Le texte devient blanc au survol */
+    /* L'ombre peut s'intensifier ou changer de couleur */
+    text-shadow: 0 0 10px rgba(83, 20, 21, 0.9); /* Ombre un peu plus présente */
+    border-bottom-color: var(--color-bordeaux); /* Soulignement Bordeaux apparaît */
+}
+
+/* Style spécifique pour le lien actif */
 .main-navigation a.active {
-    font-weight: bold; /* Style pour la page active */
+    color: var(--color-white); /* Lien actif en blanc */
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(83, 20, 21, 0.8);
+    border-bottom-color: var(--color-bordeaux); /* Soulignement permanent */
 }
+
 
 .menu-toggle {
-    display: none; /* Masqué par défaut, à afficher sur mobile */
+    display: none;
     background: none;
     border: none;
     font-size: 2rem;
+    color: var(--color-white); /* Couleur de l'icône burger */
     cursor: pointer;
 }
 
+/* ================================================= */
+/* STYLES SECTIONS PLEINE PAGE                     */
+/* ================================================= */
+.full-screen-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+}
+
+#logo-section {
+    background-color: var(--color-black);
+}
+.logo-container img {
+    display: block;
+    max-width: 80%;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+}
+
+.photo-section h2 {
+    /* Utilisation de la police de titre */
+    font-family: var(--font-headings);
+    font-weight: 700; /* Assurer que c'est bien gras */
+    font-size: clamp(2.5rem, 10vw, 7rem); /* Police encore un peu plus grande */
+    color: var(--color-white);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    padding: 0 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Ombre plus marquée pour lisibilité */
+    line-height: 1.1; /* Ajuster l'interligne pour les grands titres */
+}
+
+.section-link {
+    display: block;
+    min-height: 100vh;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    /* Enlever la transition de scale si on ne l'utilise pas */
+    /* transition: transform 0.3s ease; */
+}
+/* Optionnel: Effet au survol sur toute la section photo */
+/* .section-link:hover section { filter: brightness(0.8); } */
+
+
+/* ----- Images de fond spécifiques ----- */
+#portrait-section {
+    background-image: url('photo/personne.jpg');
+}
+#event-section {
+    background-image: url('photo/event.jpg');
+}
+#pro-section {
+    background-image: url('photo/immo.jpg');
+}
+
+
+/* ================================================= */
+/* STYLES FOOTER                                   */
+/* ================================================= */
 .site-footer {
-    background-color: #f8f8f8; /* Fond léger pour le footer ? Ou noir ? */
-    color: #555; /* Couleur de texte pour le footer */
+    background-color: var(--color-black); /* Footer sur fond noir aussi ? */
+    color: var(--color-gray);
     font-size: 0.9rem;
+    padding: 40px 0; /* Un peu de padding */
+    border-top: 1px solid rgba(176, 172, 173, 0.2); /* Ligne de séparation grise/transparente */
 }
 .footer-container {
-    /* Styles pour organiser le contenu du footer (flexbox ?) */
+     width: 90%;
+     max-width: 1100px;
+     margin-left: auto;
+     margin-right: auto;
+     /* Revoir la structure si besoin */
+     text-align: center; /* Centrer tout dans le footer pour simplifier ? */
 }
 .footer-links ul {
     list-style: none;
@@ -84,125 +220,54 @@ body {
     margin: 0 0 20px 0;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Espace entre les liens */
+    gap: 20px; /* Espace entre les liens */
+    flex-wrap: wrap; /* Pour passer à la ligne sur mobile */
 }
 .footer-links a {
-     text-decoration: none;
-     color: inherit;
+     color: var(--color-gray);
+     text-transform: uppercase;
+     font-size: 0.8rem;
+     letter-spacing: 0.05em;
 }
-.footer-social {
-    text-align: center;
-    margin-bottom: 10px;
+.footer-links a:hover {
+      color: var(--color-white);
+}
+.footer-social p {
+    margin-bottom: 5px;
 }
 .footer-social a {
-     text-decoration: none;
-     color: inherit; /* Utiliser la couleur Bordeaux ? */
-     margin-left: 10px;
+     color: var(--color-gray);
      font-weight: bold;
+     margin: 0 8px; /* Espace autour du lien social */
+}
+.footer-social a:hover {
+     color: var(--color-white);
 }
 .footer-copyright {
-    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    opacity: 0.7; /* Un peu plus discret */
 }
 
 
-/* Style de base pour les sections pleine page */
-.full-screen-section {
-    min-height: 100vh; /* Hauteur minimale = 100% de la hauteur de la fenêtre */
-    display: flex; /* Pour centrer le contenu facilement */
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Important pour le positionnement du texte */
-    overflow: hidden; /* Cache le contenu qui dépasse si nécessaire */
-    background-size: cover; /* L'image de fond couvre toute la section */
-    background-position: center center; /* Centre l'image de fond */
-}
-
-/* Section 1: Logo */
-#logo-section {
-    background-color: #000000; /* Fond noir */
-}
-.logo-container img {
-    display: block; /* Assure que l'image n'a pas d'espace en dessous */
-    max-width: 80%; /* Limite la taille du logo */
-    max-height: 50vh; /* Limite la hauteur */
-    width: auto; /* Garde les proportions */
-    height: auto;
-}
- /* Alternative si le logo est juste du texte */
- /*
- .logo-container h1 {
-    font-size: 4rem;
-    color: #FFFFFF; / ou Bordeaux
-    margin: 0;
- }
- */
-
-/* Sections avec Photo en Fond */
-.photo-section h2 {
-    font-size: clamp(2.5rem, 10vw, 6rem); /* Taille de police responsive */
-    color: #FFFFFF; /* Texte blanc (à ajuster selon l'image et la palette) */
-    /* Appliquer ici la police spéciale si besoin */
-    /* font-family: 'Votre Police Speciale', sans-serif; */
-    text-transform: uppercase; /* Texte en majuscules */
-    text-align: center;
-    margin: 0;
-    padding: 0 20px; /* Empêche le texte de toucher les bords */
-    /* Ombre portée pour la lisibilité sur différentes images */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    /* Positionnement plus précis si nécessaire avec position: absolute */
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
-    /* width: 100%; */ /* Nécessaire avec position absolute pour le text-align */
-}
-
-/* Liens qui englobent les sections */
-.section-link {
-    display: block; /* Pour que le lien prenne toute la place */
-    min-height: 100vh; /* Doit correspondre à la section */
-    text-decoration: none; /* Pas de soulignement */
-    color: inherit; /* Hérite la couleur du texte définie dans la section */
-    position: relative; /* Contexte de positionnement */
-    transition: transform 0.3s ease; /* Effet optionnel au survol */
-}
- /* Optionnel: Effet au survol */
- /*
- .section-link:hover {
-    transform: scale(1.02); /* Léger zoom
- }
- */
-
-/* ----- Images de fond spécifiques (Utilise tes URLs) ----- */
-/* Remplace les noms de fichiers par les tiens */
-#portrait-section {
-    /* S'assurer que l'URL est correcte et que l'image est accessible */
-    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/personne.jpg');
-}
-#event-section {
-    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/event.jpg');
-}
-#pro-section {
-    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/immo.jpg');
-}
-
-
-/* ----- Responsive Design (Exemple de base pour le menu mobile) ----- */
+/* ================================================= */
+/* RESPONSIVE DESIGN (À COMPLÉTER)                 */
+/* ================================================= */
 @media (max-width: 768px) {
-    .main-navigation {
-        display: none; /* Masquer le menu normal sur petit écran */
-        /* Ajouter ici les styles pour afficher le menu quand il est ouvert */
-        /* position: absolute; top: 60px; left: 0; width: 100%; background: #fff; etc. */
+    .header-container {
+        /* Ajustements pour mobile si nécessaire */
     }
-
+    .main-navigation {
+        display: none; /* Masquer le menu desktop */
+        /* Styles pour le menu mobile déroulant/caché à ajouter ici */
+    }
     .menu-toggle {
         display: block; /* Afficher le bouton burger */
     }
 
-    /* Ajuster la taille du texte sur mobile */
     .photo-section h2 {
-         font-size: clamp(2rem, 12vw, 4rem);
+         font-size: clamp(2rem, 12vw, 4.5rem); /* Taille de titre réduite sur mobile */
     }
 
-    /* Autres ajustements possibles pour mobile */
+    /* Autres ajustements */
 }
