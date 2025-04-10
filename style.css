@@ -11,7 +11,7 @@
     --color-gray: #B0ACAD;
     --color-bordeaux: #330C0D;
     --color-white: #FFFFFF; /* On ajoute du blanc pour le contraste */
-
+    --color-kodak: #CEB190;
     /* Police principale pour le corps et la navigation */
     --font-body: 'Raleway', sans-serif;
     /* Police pour les titres importants */
@@ -22,7 +22,7 @@ body {
     margin: 0;
     font-family: var(--font-body);
     background-color: var(--color-black); /* Fond noir principal */
-    color: var(--color-gray); /* Texte gris par défaut */
+    color: var(--color-kodak); /* Texte gris par défaut */
     line-height: 1.6; /* Améliore la lisibilité */
 }
 
