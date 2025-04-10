@@ -7,7 +7,7 @@ body {
     font-family: sans-serif; /* Police basique, à changer */
     /* Définir ici les couleurs N&B / Bordeaux, police principale, etc. */
     /* Exemple: */
-    background-color: #FFFFFF; /* Fond blanc par défaut ? */
+    background-color: #F5F5F5; /* Fond blanc par défaut ? */
     color: #1a1a1a; /* Texte sombre par défaut ? */
 }
 
@@ -31,7 +31,7 @@ body {
     /* top: 0; */
     /* left: 0; */
     /* width: 100%; */
-    /* background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent ? */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent ? */
     /* z-index: 100; */
     padding: 10px 0;
 }
