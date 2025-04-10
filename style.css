@@ -177,13 +177,13 @@ body {
 /* Remplace les noms de fichiers par les tiens */
 #portrait-section {
     /* S'assurer que l'URL est correcte et que l'image est accessible */
-    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/personne.jpg');
+    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/personne.jpg');
 }
 #event-section {
-    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/event.jpg');
+    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/event.jpg');
 }
 #pro-section {
-    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/photo/immo.jpg');
+    background-image: url('https://raw.githubusercontent.com/soteo3d/NITERC/main/immo.jpg');
 }
 
 
