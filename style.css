@@ -96,11 +96,11 @@ a:hover {
     text-transform: uppercase; /* Majuscules pour un style plus marqué */
     font-size: 0.9rem;
     letter-spacing: 0.05em; /* Léger espacement des lettres */
-    color: var(--color-gray); /* Couleur de base: le gris clair */
+    color: var(--color-kodak); /* Couleur de base: le gris clair */
 
     /* Effet "pellicule" subtil avec text-shadow en couleur Bordeaux */
     /* Ajuster l'opacité (le dernier chiffre) et le flou (le px) */
-    text-shadow: 0 0 6px rgba(51, 12, 13, 0.7); /* Ombre basée sur #330C0D */
+    text-shadow: 0 0 6px rgba(184, 90, 15, 0.7); /* Ombre basée sur #330C0D */
 
     padding-bottom: 5px; /* Espace pour un éventuel soulignement au survol */
     border-bottom: 2px solid transparent; /* Préparer pour le soulignement */
@@ -110,7 +110,7 @@ a:hover {
 .main-navigation a:hover {
     color: var(--color-white); /* Le texte devient blanc au survol */
     /* L'ombre peut s'intensifier ou changer de couleur */
-    text-shadow: 0 0 10px rgba(83, 20, 21, 0.9); /* Ombre un peu plus présente */
+    text-shadow: 0 0 10px rgba(206, 177, 144, 0.9); /* Ombre un peu plus présente */
     border-bottom-color: var(--color-bordeaux); /* Soulignement Bordeaux apparaît */
 }
 
